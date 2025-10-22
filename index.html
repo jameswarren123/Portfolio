@@ -8,6 +8,7 @@
     <title>James Warren Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <script src="/script.js" defer></script>
 
@@ -27,18 +28,20 @@
     </nav>
 
     <!-- Splash -->
-    <section id="splash">
+    <section class="splash" id="splash">
         <div class="pro-pfp" id="proPfp">
             <img src="images/professionalPfp.jpg" alt="Avatar" />
         </div>
-        <h1>James Warren</h1>
-        <h2>Software Engineer</h2>
-        <p>4th Year Graduating Software Engineer at UGA</p>
-        <hr>
+        <div class="blurb">
+            <h1>James Warren</h1>
+            <h2>Software Engineer</h2>
+            <p>4th Year Graduating Software Engineer at UGA</p>
+        </div>
     </section>
+    <hr>
 
     <!-- Projects -->
-    <section id="projects">
+    <section class="projects" id="projects">
         <h2>Projects</h2>
         <div class="slide-container swiper">
             <div class="slide-content">
@@ -48,7 +51,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="images/profile1.jpg" alt="" class="card-img">
+                                <img src="images\Screenshot 2025-10-15 144001.png" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -58,7 +61,9 @@
                                 using MySQL, Docker, Java, CSS, and HTML to allow users to post, rate, view, and search
                                 recipes.</p>
 
-                            <button class="button">View Source</button>
+                            <a href="https://github.com/jameswarren123/Term-Project-CS4370" target="_blank">
+                                <button class="button">View Source</button>
+                            </a>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -66,17 +71,20 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="images/profile2.jpg" alt="" class="card-img">
+                                <img src="images\Screenshot 2025-10-15 145854.png" alt="" class="card-img">
                             </div>
                         </div>
 
                         <div class="card-content">
                             <h2 class="name">Classify Adversarial Images</h2>
-                            <p class="description">The lorem text the section that contains header with having open
-                                functionality. Lorem
-                                dolor sit amet consectetur adipisicing elit.</p>
+                            <p class="description">A research project to determine the detectability of varying
+                                Adversarial
+                                image producing algorithms and classifications using Python, Numpy, Pandas, MatPlotLib,
+                                Pytorch, and Scikit-Learn.</p>
 
-                            <button class="button">View More</button>
+                            <a href="https://github.com/jameswarren123/ClassifyAdversarialImages" target="_blank">
+                                <button class="button">View Source</button>
+                            </a>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -84,17 +92,21 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="images/profile3.jpg" alt="" class="card-img">
+                                <img src="images\Image2.png" alt="" class="card-img">
                             </div>
                         </div>
 
                         <div class="card-content">
                             <h2 class="name">Distributed File Transfer Protocol</h2>
-                            <p class="description">The lorem text the section that contains header with having open
-                                functionality. Lorem
-                                dolor sit amet consectetur adipisicing elit.</p>
+                            <p class="description">An example Distributed File Transfer Protocol built by a three person
+                                team
+                                that uses file locks and threading to handle multiple connections to a servers file
+                                system
+                                navigatable via normal bash commands.</p>
 
-                            <button class="button">View More</button>
+                            <a href="https://github.com/jameswarren123/SmartThread-FTP" target="_blank">
+                                <button class="button">View Source</button>
+                            </a>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -102,35 +114,19 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="images/profile9.jpg" alt="" class="card-img">
+                                <img src="images\Social_media_collection_2020s.png" alt="" class="card-img">
                             </div>
                         </div>
 
                         <div class="card-content">
                             <h2 class="name">Toy Social Media App</h2>
-                            <p class="description">The lorem text the section that contains header with having open
-                                functionality. Lorem
-                                dolor sit amet consectetur adipisicing elit.</p>
+                            <p class="description">A toy social media platform made in a four person team
+                                which allows users to post, comment, and perform a variety of commen social media tasks.
+                            </p>
 
-                            <button class="button">View More</button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-
-                            <div class="card-image">
-                                <img src="images/profile9.jpg" alt="" class="card-img">
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                            <h2 class="name">Coordinate Based Weather Information App</h2>
-                            <p class="description">The lorem text the section that contains header with having open
-                                functionality. Lorem
-                                dolor sit amet consectetur adipisicing elit.</p>
-
-                            <button class="button">View More</button>
+                            <a href="https://github.com/jameswarren123/Social-Media-Platform-Example" target="_blank">
+                                <button class="button">View Source</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -143,40 +139,83 @@
         <hr>
     </section>
 
-    <!-- Skills & Experience -->
+    <!-- Skills -->
     <section id="skills">
         <div class="skill-grid">
-            <h2>Skills & Experience</h2>
-            <div class="skill-card">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C/C++</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+                <li>Git/GitHub</li>
+                <li>Linux/Unix</li>
+                <li>Docker</li>
+                <li>Machine Learning</li>
+                <li>Data Analysis</li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <!-- Work Experience -->
+    <section class="work" id="work">
+        <h2>Work Experience</h2>
+        <div class="work-item">
+            <div class="title-and-date">
+                <h3>CS Undergraduate Teaching Assistant</h3>
+                <p>UGA | January 2025 - Current</p>
+            </div>
+            <p>As an undergraduate teaching assistant at uga, I worked to help the professors I worked under
+                accomplish grading in a timely manner, enhance student understanding of core concepts,
+                develop active helpful feedback on assignments, expand autograding capabilities, and administer
+                examinations.</p>
+        </div>
+    </section>
+    <hr>
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Contact Me Here</h2>
+        <dic class="contact-options">
+            <div class="contact-card" onclick="copyEmail()">
                 <i class="fa-solid fa-envelope"></i>
                 <p>Email</p>
             </div>
-            <hr>
-        </div>
-    </section>
-    <!-- Work Experience -->
-    <section id="work">
-        <h2>Work Experience</h2>
-        <div class="work-item">
-            <h3>Job Title 1</h3>
-            <p>Company Name | Dates of Employment</p>
-            <p>Brief description of responsibilities and achievements.</p>
-        </div>
-        <div class="work-item">
-            <h3>Job Title 2</h3>
-            <p>Company Name | Dates of Employment</p>
-            <p>Brief description of responsibilities and achievements.</p>
-        </div>
-        <!-- Add more work experiences as needed -->
-        <hr>
-    </section>
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Connect With Me</h2>
-        <!-- Steal from prianka -->
+            <a href="https://www.linkedin.com/in/james-warren1/" target="_blank">
+                <div class="contact-card">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <p>LinkedIn</p>
+                </div>
+            </a>
+            <a href="https://github.com/jameswarren123" target="_blank">
+                <div class="contact-card">
+                    <i class="fa-brands fa-github"></i>
+                    <p>GitHub</p>
+                </div>
+            </a>
+            <a href="James Warren Resume.pdf" target="_blank">
+                <div class="contact-card">
+                    <i class="fa-solid fa-file"></i>
+                    <p>Resume</p>
+                </div>
+            </a>
+
+            </div>
     </section>
 
 </body>
+<script>
+    function copyEmail() {
+        const email = "jameswarren012@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+            alert("Email copied to clipboard! Feel free to reach out!");
+        }).catch(err => {
+            console.error("Failed to copy email: ", err);
+        });
+    }
+</script>
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

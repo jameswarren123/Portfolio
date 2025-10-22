@@ -9,16 +9,64 @@
 }
 
 body {
+  background-color: #dbc8ad;
+}
+
+.splash {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #EFEFEF;
+  gap: 80px;
+}
+
+.pro-pfp img {
+  height: 400px;
+  width: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #3b3b3b9d;
+  box-shadow: 0 0px 20px rgb(65, 65, 65);
+}
+
+nav {
+  display: flex;
+  position: sticky;
+  padding: 10px;
+  top: 0;
+  z-index: 1000;
+  justify-content: space-between;
+  background-color: #a69986;
+  border-bottom: 1px solid #000000;
+}
+
+.navlist {
+  display: flex;
+  gap: 30px;
+}
+
+.navlist li {
+  list-style: none;
+}
+
+.navlist li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.navlist li a:hover {
+  color: #5c5449;
+}
+
+.projects {
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+
 }
 
 .slide-container {
-  max-width: 1120px;
+  max-width: 80%;
   width: 100%;
   padding: 40px 0;
 }
@@ -31,7 +79,7 @@ body {
 
 .card {
   border-radius: 25px;
-  background-color: #FFF;
+  background-color: #707070;
 }
 
 .image-content,
@@ -54,7 +102,7 @@ body {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #4070F4;
+  background-color: #bc9d7f;
   border-radius: 25px 25px 0 25px;
 }
 
@@ -66,12 +114,12 @@ body {
   bottom: -40px;
   height: 40px;
   width: 40px;
-  background-color: #4070F4;
+  background-color: #bc9d7f;
 }
 
 .overlay::after {
   border-radius: 0 25px 0 0;
-  background-color: #FFF;
+  background-color: #707070;
 }
 
 .card-image {
@@ -88,7 +136,7 @@ body {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #4070F4;
+  border: 4px solid #8d765f;
 }
 
 .name {
@@ -99,16 +147,16 @@ body {
 
 .description {
   font-size: 14px;
-  color: #707070;
+  color: #3c3c3c;
   text-align: center;
 }
 
 .button {
   border: none;
   font-size: 16px;
-  color: #FFF;
+  color: #543b1d;
   padding: 8px 16px;
-  background-color: #4070F4;
+  background-color: #966931;
   border-radius: 6px;
   margin: 14px;
   cursor: pointer;
@@ -120,12 +168,12 @@ body {
 }
 
 .swiper-navBtn {
-  color: #6E93f7;
+  color: #737373;
   transition: color 0.3s ease;
 }
 
 .swiper-navBtn:hover {
-  color: #4070F4;
+  color: #a5a5a5;
 }
 
 .swiper-navBtn::before,
@@ -142,13 +190,85 @@ body {
 }
 
 .swiper-pagination-bullet {
-  background-color: #6E93f7;
+  background-color: #00000073;
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #4070F4;
+  background-color: #000000;
 }
+
+.skill-grid h2 {
+  text-align: center;
+}
+
+.skill-grid ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.skill-grid ul li {
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+.work {
+  margin: 20px 0;
+}
+
+.work h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+.title-and-date {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.work p {
+  text-align: center;
+}
+
+.contact {
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+
+.contact h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  background-color: #707070;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0px 10px rgb(65, 65, 65);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  color:rgb(65, 65, 65);
+}
+
+.contact-options a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgb(65, 65, 65);
+}
+
 
 @media screen and (max-width: 768px) {
   .slide-content {
