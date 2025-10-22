@@ -164,12 +164,11 @@ nav {
 }
 
 .button:hover {
-  background: #265DF2;
+  background: #855d2b;
 }
 
 .swiper-navBtn {
   color: #737373;
-  transition: color 0.3s ease;
 }
 
 .swiper-navBtn:hover {
