@@ -1,6 +1,19 @@
 /* Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/*============================================================*/
+
+/* General */
+:root{
+  --base-color: #cbb9a1; /* background */
+  --base-variant: #decab0; /* panels or cards */
+  --text-color: #281c0d; /* main text, titles, important info */
+  --secondary-text: #352512; /* captions, subtitles, etc */
+  --primary-color: rgb(0, 255, 255); /* navbar, main items, buttons, glow? */
+  --accent-color: blueviolet; /* highlight, hover, borders, details */
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,26 +22,21 @@
 }
 
 body {
-  background-color: #dbc8ad;
+  background-color: var(--base-color);
 }
 
-.splash {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
+hr {
+  border: none;
+  border-top:rgba(0, 0, 0) 1px solid;
+  transform: scaleY(1);
+  background-color: #000000;
+  margin: 20px 0;
 }
+/* End General */
 
-.pro-pfp img {
-  height: 400px;
-  width: auto;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #3b3b3b9d;
-  box-shadow: 0 0px 20px rgb(65, 65, 65);
-}
+/*============================================================*/
 
+/* Nav Bar */
 nav {
   display: flex;
   position: sticky;
@@ -58,10 +66,39 @@ nav {
   color: #5c5449;
 }
 
+#splash, #projects, #skills, #work, #contact {
+  scroll-margin-top: 65px;
+}
+/* End Nav Bar */
+
+/*============================================================*/
+
+/* Splash Section */
+.splash {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+.pro-pfp img {
+  height: 400px;
+  width: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #3b3b3b9d;
+  box-shadow: 0 0px 20px rgb(65, 65, 65);
+}
+/* End Splash Section */
+
+/*============================================================*/
+
+/* Projects Section */
 .projects {
   display: flex;
   align-items: center;
-  margin: 10px 20px;
+  margin: 0px 20px;
 
 }
 
@@ -212,8 +249,101 @@ nav {
   padding: 0px 15px;
 }
 
+@media screen and (max-width: 768px) {
+  .slide-content {
+    margin: 0 10px;
+  }
+
+  .swiper-navBtn {
+    display: none;
+  }
+}
+/* End Projects Section */
+
+/*============================================================*/
+
+/* Main skills section */
+.skills {
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Horizontal stacking */
+.skill-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Each category (Programming Languages, Tools) */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The inner group of skills */
+.skill-subgrid {
+  display: flex;
+  flex-wrap: nowrap; /* set to wrap if you want multiple rows */
+  overflow-x: auto;  /* allows horizontal scroll if too many items */
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+}
+
+/* Each individual skill */
+.skill-subgrid .skill-item {
+  flex: 0 0 auto; /* prevents shrinking */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  padding: 0.75rem;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.skill-subgrid .skill-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Icons */
+.skill-subgrid i {
+  font-size: 25px;
+  color: #48402b;
+  margin-bottom: 0.5rem;
+}
+
+/* Labels */
+.skill-subgrid p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Optional: Hide scroll bar for a cleaner look */
+.skill-subgrid::-webkit-scrollbar {
+  display: none;
+}
+.skill-subgrid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* End Main skills section */
+
+/*============================================================*/
+
+/* Work Section */
 .work {
-  margin: 20px 0;
+  margin: 0px 0;
 }
 
 .work h2 {
@@ -229,7 +359,11 @@ nav {
 .work p {
   text-align: center;
 }
+/* End Work Section */
 
+/*============================================================*/
+
+/* Contact Section */
 .contact {
   margin: 20px 0;
   padding-bottom: 20px;
@@ -267,14 +401,4 @@ nav {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgb(65, 65, 65);
 }
-
-
-@media screen and (max-width: 768px) {
-  .slide-content {
-    margin: 0 10px;
-  }
-
-  .swiper-navBtn {
-    display: none;
-  }
-}
+/* End Contact Section */

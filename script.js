@@ -26,3 +26,22 @@ var swiper = new Swiper(".slide-content", {
     },
   },
 });
+
+function copyEmail() {
+  const email = "jameswarren012@gmail.com";
+  navigator.clipboard.writeText(email).then(() => {
+    alert("Email copied to clipboard! Feel free to reach out!");
+  }).catch(err => {
+    console.error("Failed to copy email: ", err);
+  });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({block: "start", behavior: 'smooth' });
+    }
+  });
+});

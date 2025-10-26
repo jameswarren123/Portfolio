@@ -137,31 +137,85 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-        <hr>
+    <hr>
 
     <!-- Skills -->
     <!-- Java, Python, SQL, C, C++, Bash, HTML, CSS, JavaScript -->
     <!-- PyTorch, Scikit-Learn, MatPlotLib, Pandas, NumPy, Github, Linux, MySQL, Docker, WebShark, -->
-    <section id="skills">
+    <section class="skills" id="skills">
+        <h2>Skills</h2>
         <div class="skill-grid">
-            <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>Java</li>
-                <li>C/C++</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>SQL</li>
-                <li>Git/GitHub</li>
-                <li>Linux/Unix</li>
-                <li>Docker</li>
-                <li>Machine Learning</li>
-                <li>Data Analysis</li>
-            </ul>
+            <!-- Programming Languages -->
+            <div class="skill-item">
+                <h3>Programming Languages</h3>
+                <div class="skill-subgrid">
+                    <div class="skill-item"><i class="fa-brands fa-java"></i>
+                        <p>Java</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-brands fa-python"></i>
+                        <p>Python</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-solid fa-database"></i>
+                        <p>SQL</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-solid fa-c"></i>
+                        <p>C</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-solid fa-code"></i>
+                        <p>C++</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-solid fa-terminal"></i>
+                        <p>Bash</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-brands fa-html5"></i>
+                        <p>HTML</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-brands fa-css3-alt"></i>
+                        <p>CSS</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-brands fa-js"></i>
+                        <p>JavaScript</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies & Tools -->
+            <div class="skill-item">
+                <h3>Technologies & Tools</h3>
+                <div class="skill-subgrid">
+                    <div class="skill-item"><i class="fa-brands fa-linux"></i>
+                        <p>Linux</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-solid fa-database"></i>
+                        <p>MySQL</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-brands fa-docker"></i>
+                        <p>Docker</p>
+                    </div>
+                    <div class="skill-item"><i class="fa-brands fa-github"></i>
+                        <p>GitHub</p>
+                    </div>
+                    <div class="skill-item"><img src="images\logo.png" alt="PyTorch logo" width="25px" />
+                        <p>PyTorch</p>
+                    </div>
+                    <div class="skill-item"><img src="images\logo2.png" alt="Scikit-Learn logo" width="25px" />
+                        <p>Scikit-Learn</p>
+                    </div>
+                    <div class="skill-item"><img src="images\logo3.png" alt="MatPlotLib logo" width="25px" />
+                        <p>MatPlotLib</p>
+                    </div>
+                    <div class="skill-item"><img src="images\logo4.png" alt="Pandas logo" width="25px" />
+                        <p>Pandas</p>
+                    </div>
+                    <div class="skill-item"><img src="images\logo5.png" alt="NumPy logo" width="25px" />
+                        <p>NumPy</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <hr>
+
     <!-- Work Experience -->
     <section class="work" id="work">
         <h2>Work Experience</h2>
@@ -177,6 +231,7 @@
         </div>
     </section>
     <hr>
+
     <!-- Contact -->
     <section class="contact" id="contact">
         <h2>Contact Me Here</h2>
@@ -208,16 +263,6 @@
     </section>
 
 </body>
-<script>
-    function copyEmail() {
-        const email = "jameswarren012@gmail.com";
-        navigator.clipboard.writeText(email).then(() => {
-            alert("Email copied to clipboard! Feel free to reach out!");
-        }).catch(err => {
-            console.error("Failed to copy email: ", err);
-        });
-    }
-</script>
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
