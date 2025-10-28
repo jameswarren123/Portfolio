@@ -81,6 +81,8 @@ nav {
 .navlist {
   display: flex;
   gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .navlist li {
@@ -117,6 +119,20 @@ nav {
 #splash, #projects, #skills, #work, #contact {
   scroll-margin-top: 65px;
 }
+
+@media screen and (max-width: 1024px) {
+  .navlist {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .navlist {
+    gap: 8px;
+  }
+}
+
+
 /* End Nav Bar */
 
 /*============================================================*/
@@ -128,6 +144,8 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 80px;
+  max-width: 95%;
+  margin: 0 auto; /* centers horizontally after using max-width */
 }
 
 .splash h1 {
@@ -158,6 +176,11 @@ nav {
     flex-direction: column;
     gap: 10px;
     margin-top: 20px;
+  }
+
+  .pro-pfp img {
+    height: 300px;
+    width: auto;
   }
 }
 
