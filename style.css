@@ -2,17 +2,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /*============================================================*/
-
-/* General */
-:root{
-  --base-color: #cbb9a1; /* background */
-  --base-variant: #decab0; /* panels or cards */
-  --text-color: #281c0d; /* main text, titles, important info */
-  --secondary-text: #352512; /* captions, subtitles, etc */
-  --primary-color: rgb(0, 255, 255); /* navbar, main items, buttons, glow? */
-  --accent-color: blueviolet; /* highlight, hover, borders, details */
+/* test css */
+.splash img {
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(180, 120, 50, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.splash img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(180, 120, 50, 0.35);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0); }
+}
+.blurb {
+  animation: fadeInUp 1s ease forwards;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+#splash {
+  /*background: linear-gradient(135deg, #f7e9d4, #f3d9b0, #f1cfa3);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;*/
 }
 
+/* End test css */
+/*============================================================*/
+
+/* General */
+:root {
+  --base-color: #e7ddc6; /* background */
+  --base-variant: #baac9e; /* projects & contact cards */
+  --text-color: #2e2e2e; /* main text, titles, important info */
+  --secondary-text: #555555; /* captions, subtitles, etc */
+  --primary-color: #7a6d59; /* navbar & buttons */
+  --accent-color: #efebe3; /* splashimg, project tops, skls icons */
+}
 
 * {
   margin: 0;
@@ -27,9 +56,9 @@ body {
 
 hr {
   border: none;
-  border-top:rgba(0, 0, 0) 1px solid;
+  border-top: 1px solid var(--secondary-text);
   transform: scaleY(1);
-  background-color: #000000;
+  background-color: var(--secondary-text);
   margin: 20px 0;
 }
 /* End General */
@@ -44,8 +73,9 @@ nav {
   top: 0;
   z-index: 1000;
   justify-content: space-between;
-  background-color: #a69986;
-  border-bottom: 1px solid #000000;
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--text-color);
+  color: var(--base-color);
 }
 
 .navlist {
@@ -58,12 +88,30 @@ nav {
 }
 
 .navlist li a {
+  position: relative;
   text-decoration: none;
-  color: #000000;
+  color: var(--base-color);
+  transition: color 0.3s ease;
+}
+
+.navlist li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Adjust if you want spacing from the text */
+  top: 85%;
+  width: 0%;
+  height: 1.5px; /* underline thickness */
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
 }
 
 .navlist li a:hover {
-  color: #5c5449;
+  color: var(--accent-color);
+}
+
+.navlist li a:hover::after {
+  width: 100%;
 }
 
 #splash, #projects, #skills, #work, #contact {
@@ -82,24 +130,52 @@ nav {
   gap: 80px;
 }
 
+.splash h1 {
+  font-family: "Amaranth", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 55px;
+}
+
 .pro-pfp img {
   height: 400px;
   width: auto;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #3b3b3b9d;
-  box-shadow: 0 0px 20px rgb(65, 65, 65);
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.25);
 }
+
+@media screen and (max-width: 1024px) {
+  .splash {
+    max-width: 95%;
+    margin: 0 auto; /* centers horizontally after using max-width */
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .splash {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+}
+
 /* End Splash Section */
 
 /*============================================================*/
+
+h2 {
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 /* Projects Section */
 .projects {
   display: flex;
   align-items: center;
   margin: 0px 20px;
-
 }
 
 .slide-container {
@@ -116,7 +192,7 @@ nav {
 
 .card {
   border-radius: 25px;
-  background-color: #707070;
+  background-color: var(--base-variant);
 }
 
 .image-content,
@@ -139,7 +215,7 @@ nav {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #bc9d7f;
+  background-color: var(--accent-color);
   border-radius: 25px 25px 0 25px;
 }
 
@@ -151,12 +227,12 @@ nav {
   bottom: -40px;
   height: 40px;
   width: 40px;
-  background-color: #bc9d7f;
+  background-color: var(--accent-color);
 }
 
 .overlay::after {
   border-radius: 0 25px 0 0;
-  background-color: #707070;
+  background-color: var(--base-variant);
 }
 
 .card-image {
@@ -164,7 +240,7 @@ nav {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  background: #FFF;
+  background: var(--base-color);
   padding: 3px;
 }
 
@@ -173,27 +249,27 @@ nav {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #8d765f;
+  border: 4px solid var(--primary-color);
 }
 
 .name {
   font-size: 18px;
   font-weight: 500;
-  color: #333;
+  color: var(--text-color);
 }
 
 .description {
   font-size: 14px;
-  color: #3c3c3c;
+  color: var(--secondary-text);
   text-align: center;
 }
 
 .button {
   border: none;
   font-size: 16px;
-  color: #543b1d;
+  color: var(--base-color);
   padding: 8px 16px;
-  background-color: #966931;
+  background-color: var(--primary-color);
   border-radius: 6px;
   margin: 14px;
   cursor: pointer;
@@ -201,15 +277,15 @@ nav {
 }
 
 .button:hover {
-  background: #855d2b;
+  background: var(--accent-color);
 }
 
 .swiper-navBtn {
-  color: #737373;
+  color: var(--secondary-text);
 }
 
 .swiper-navBtn:hover {
-  color: #a5a5a5;
+  color: var(--accent-color);
 }
 
 .swiper-navBtn::before,
@@ -218,20 +294,20 @@ nav {
 }
 
 .swiper-button-next {
-  right: 0;
+  right: 0px;
 }
 
 .swiper-button-prev {
-  left: 0;
+  left: 0px;
 }
 
 .swiper-pagination-bullet {
-  background-color: #00000073;
+  background-color: rgba(0, 0, 0, 0.45);
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #000000;
+  background-color: var(--text-color);
 }
 
 .skill-grid h2 {
@@ -256,6 +332,12 @@ nav {
 
   .swiper-navBtn {
     display: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .projects {
+    flex-direction: column;
   }
 }
 /* End Projects Section */
@@ -289,8 +371,8 @@ nav {
 /* The inner group of skills */
 .skill-subgrid {
   display: flex;
-  flex-wrap: nowrap; /* set to wrap if you want multiple rows */
-  overflow-x: auto;  /* allows horizontal scroll if too many items */
+  flex-wrap: nowrap;
+  overflow-x: auto;
   justify-content: center;
   gap: 2rem;
   padding: 1rem 0;
@@ -299,7 +381,7 @@ nav {
 
 /* Each individual skill */
 .skill-subgrid .skill-item {
-  flex: 0 0 auto; /* prevents shrinking */
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -319,7 +401,7 @@ nav {
 /* Icons */
 .skill-subgrid i {
   font-size: 25px;
-  color: #48402b;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
@@ -327,6 +409,7 @@ nav {
 .skill-subgrid p {
   font-size: 0.95rem;
   margin: 0;
+  color: var(--text-color);
 }
 
 /* Optional: Hide scroll bar for a cleaner look */
@@ -336,28 +419,33 @@ nav {
 .skill-subgrid {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  flex-wrap: wrap;
 }
+
 /* End Main skills section */
 
 /*============================================================*/
 
 /* Work Section */
 .work {
-  margin: 0px 0;
+  margin: 0 20px;
 }
 
 .work h2 {
   text-align: center;
   margin: 10px 0;
+  color: var(--text-color);
 }
 .title-and-date {
   display: flex;
   gap: 30px;
   justify-content: center;
   align-items: center;
+  margin: 10px 0;
 }
 .work p {
   text-align: center;
+  color: var(--secondary-text);
 }
 /* End Work Section */
 
@@ -372,6 +460,7 @@ nav {
 .contact h2 {
   text-align: center;
   margin: 10px 0;
+  color: var(--text-color);
 }
 
 .contact-options {
@@ -382,14 +471,14 @@ nav {
 }
 
 .contact-card {
-  background-color: #707070;
+  background-color: var(--base-variant);
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 0px 10px rgb(65, 65, 65);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.3s ease;
   text-align: center;
-  color:rgb(65, 65, 65);
+  color: var(--text-color);
 }
 
 .contact-options a {
@@ -399,6 +488,6 @@ nav {
 
 .contact-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgb(65, 65, 65);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 /* End Contact Section */

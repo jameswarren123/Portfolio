@@ -18,7 +18,7 @@ var swiper = new Swiper(".slide-content", {
     0: {
       slidesPerView: 1,
     },
-    520: {
+    769: {
       slidesPerView: 2,
     },
     1500: {
@@ -41,7 +41,27 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const target = document.querySelector(link.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({block: "start", behavior: 'smooth' });
+      target.scrollIntoView({ block: "start", behavior: 'smooth' });
     }
   });
+});
+
+
+
+let timeout;
+document.addEventListener('mousemove', e => {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    const splash = document.querySelector('#splash');
+    const x = (e.pageX - window.innerWidth / 2) / 50;
+    const y = (e.pageY - window.innerHeight / 2) / 50;
+    splash.style.transform = `translate(${x}px, ${y}px)`;
+  }, 10);
+});
+
+new Typed("#typed", {
+  strings: ["Software Engineer", "Problem Solver", "Machine Learning Enthusiast", "Creative Thinker"],
+  typeSpeed: 60,
+  backSpeed: 30,
+  loop: true
 });
