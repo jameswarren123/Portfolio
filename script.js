@@ -65,3 +65,25 @@ new Typed("#typed", {
   backSpeed: 30,
   loop: true
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".skill-subgrid .skill-item");
+
+  // Staggered wave animation on load
+  items.forEach((item, i) => {
+    setTimeout(() => {
+      item.classList.add("wave-animate");
+    }, i * 150); // 0.15s stagger
+  });
+
+  // After all animations complete, make sure everything is visible
+  const totalTime = items.length * 150 + 1000;
+  setTimeout(() => {
+    items.forEach(item => {
+      item.style.opacity = "1";
+      item.classList.remove("wave-animate");
+    });
+  }, totalTime);
+});
