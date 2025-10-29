@@ -2,98 +2,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /*============================================================*/
-/* test css */
-.splash img {
-  border-radius: 50%;
-  box-shadow: 0 0 30px rgba(180, 120, 50, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInRight 2s ease forwards;
-}
-.splash img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 50px rgba(180, 120, 50, 0.35);
-}
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(-30px);}
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(30px);}
-  to { opacity: 1; transform: translateX(0); }
-}
-.blurb {
-  animation: fadeInLeft 2s ease forwards;
-}
-@keyframes fadeInDown {
-  from { opacity: 1; transform: translateY(-45px);}
-  to { opacity: 1; transform: translateY(0); }
-}
-nav {
-  animation: fadeInDown 2s ease forwards;
-}
-@keyframes fadeIn {
-  from { opacity: 0;}
-  to { opacity: 1;}
-}
-hr,
-.skills h2,
-.skills h3,
-.work, 
-.contact h2 {
-  animation: fadeIn 2s ease forwards;
-}
-@keyframes fadeIn {
-  from { opacity: 0;}
-  to { opacity: 1;}
-}
-.projects h2 {
-  animation: fadeIn 2s ease forwards;
-}
-@keyframes slideIn {
-  from {transform: translateX(200px);}
-  to {transform: translateX(0); }
-}
-.slide-container {
-  animation: fadeIn 2s ease forwards, slideIn 3s ease forwards;
+/* Scroll-triggered animation classes */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Wave animation keyframes */
-@keyframes waveHover {
-  0% {
-     transform: translateY(0);
-     opacity: 0;
-    box-shadow: none;
-  }
-  50% {
-    transform: translateY(-6px);
-    opacity: .75;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-    box-shadow: none;
-  }
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* When hovering over the grid, animate all items in sequence */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-rotate {
+  opacity: 0;
+  transform: translateX(-15px) rotate(-15deg);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When element is in view */
+.animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0) rotate(0);
+}
+
+/* Skills wave animation */
 .skill-subgrid .skill-item {
   opacity: 0;
   transform: translateY(0);
 }
 
-/* The animation only runs when we add this class via JS */
-.skill-subgrid .skill-item.wave-animate {
+.skill-subgrid .skill-item.animate-wave {
   animation: waveHover 0.7s ease forwards;
 }
 
-@keyframes fadeInRotate {
-  from { opacity: 0; transform: translateX(-15px) rotate(-15deg);}
-  to { opacity: 1; transform: translateX(0) rotate(0); }
+/* Wave animation keyframes */
+@keyframes waveHover {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.contact-card {
-  animation: fadeInRotate 2s ease forwards;
+/* Original hover effects */
+.splash img {
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(180, 120, 50, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.splash img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(180, 120, 50, 0.35);
 }
 
 /* End test css */
@@ -143,6 +123,9 @@ nav {
   background-color: var(--primary-color);
   border-bottom: 1px solid var(--text-color);
   color: var(--base-color);
+  /* Remove animation classes and make always visible */
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .navlist {
@@ -199,12 +182,45 @@ nav {
   }
 }
 
-
 /* End Nav Bar */
 
 /*============================================================*/
 
 /* Splash Section */
+
+/* Floating particles */
+/* Floating particles */
+.particle {
+  position: absolute;
+  background: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0;
+  animation: float-particle 15s infinite linear;
+  z-index: -1; /* Ensure they stay behind content */
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-750px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
 .splash {
   min-height: 100vh;
   display: flex;
