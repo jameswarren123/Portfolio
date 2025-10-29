@@ -31,7 +31,7 @@ var swiper = new Swiper(".slide-content", {
 // Add floating particles to splash
 function createParticles() {
   const splash = document.querySelector('.splash');
-  const particleCount = 25;
+  const particleCount = 50;
   
   // Clear any existing particles
   const existingParticles = splash.querySelectorAll('.particle');
@@ -104,12 +104,6 @@ new Typed("#typed", {
 // Scroll-triggered animations
 document.addEventListener("DOMContentLoaded", () => {
   createParticles();
-  // Make nav bar visible immediately on load
-  const nav = document.querySelector('nav');
-  if (nav) {
-    nav.style.opacity = '1';
-    nav.style.transform = 'translateY(0)';
-  }
 
   // Add initial animation classes to other elements
   const proPfp = document.querySelector('.pro-pfp img');

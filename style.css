@@ -32,6 +32,26 @@
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+
+
+/* Force the animation to work */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body nav {
+  animation: slideDown 0.8s ease-out forwards !important;
+}
+
+
+
 /* When element is in view */
 .animate {
   opacity: 1;
@@ -123,9 +143,6 @@ nav {
   background-color: var(--primary-color);
   border-bottom: 1px solid var(--text-color);
   color: var(--base-color);
-  /* Remove animation classes and make always visible */
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 
 .navlist {
@@ -211,7 +228,7 @@ nav {
     opacity: 0.2;
   }
   100% {
-    transform: translateY(-750px) translateX(100px) rotate(360deg);
+    transform: translateY(-200vh) translateX(100px) rotate(360deg);
     opacity: 0;
   }
 }
